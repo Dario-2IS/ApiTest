@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "f90a08dc-7a30-470a-9a5d-f4be3b679f71",
+		"name": "Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "/*{\r\n    \"DocumentId\":\"172563894\",\r\n    \"Name\":\"Marianela Montalvo\",\r\n    \"Gender\": false,\r\n    \"DateOfBirth\":\"1990-07-17\",\r\n    \"Address\":\"Amazonas y NNUU\",\r\n    \"Phone\":\"097548965\",\r\n    \"Password\":\"5678\",\r\n    \"State\": true,\r\n    \"Accounts\":[\r\n        {\r\n            \"Number\":\"225487\",\r\n            \"AccountType\":\"Corriente\",\r\n            \"Balance\": 100,\r\n            \"State\": true\r\n        }\r\n    ]\r\n}*/\r\n{\r\n    \"DocumentId\":\"1718637452\",\r\n    \"Name\":\"Juan Osorio\",\r\n    \"Gender\": true,\r\n    \"DateOfBirth\":\"1989-08-07\",\r\n    \"Address\":\"13 junio y Equinoccial\",\r\n    \"Phone\":\"098874587\",\r\n    \"Password\":\"1245\",\r\n    \"State\": true,\r\n    \"Accounts\":[\r\n        {\r\n            \"Number\":\"495878\",\r\n            \"AccountType\":\"Ahorros\",\r\n            \"Balance\": 0,\r\n            \"State\": true\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\":3,\r\n    \"DocumentId\":\"172563894\",\r\n    \"Name\":\"Marianela Montalvo\",\r\n    \"Gender\": false,\r\n    \"DateOfBirth\":\"1990-07-17\",\r\n    \"Address\":\"Amazonas y NNUU\",\r\n    \"Phone\":\"097548965\",\r\n    \"Password\":\"5678\",\r\n    \"State\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customer/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReport",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerId\":\"2\",\r\n    \"Start\":\"2022-02-22\",\r\n    \"End\":\"2022-03-05\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/customer/report",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"report"
+					],
+					"query": [
+						{
+							"key": "range",
+							"value": "2022-02-05",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customer/5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
